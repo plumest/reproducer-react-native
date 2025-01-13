@@ -29,11 +29,11 @@ function App(): React.JSX.Element {
 
   const callTel = () => {
     Linking.openURL('tel:00000');
-  };
+  }
 
   const callTelPrompt = () => {
     Linking.openURL('telprompt:00000');
-  };
+  }
 
   return (
     <SafeAreaView style={backgroundStyle}>
