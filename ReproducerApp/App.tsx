@@ -15,7 +15,7 @@ import {
   TouchableOpacity,
   useColorScheme,
 } from 'react-native';
-
+import 'react-native-gesture-handler';
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
@@ -26,6 +26,10 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const colorStyle = {
+    color: isDarkMode ? Colors.lighter : Colors.darker,
+  }
 
   const callTel = () => {
     Linking.openURL('tel:00000');
@@ -45,10 +49,10 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <TouchableOpacity onPress={() => callTel()}>
-          <Text>Tel</Text>
+          <Text style={colorStyle}>Tel</Text>
         </TouchableOpacity>
         <TouchableOpacity onPress={() => callTelPrompt()}>
-          <Text>Tel Prompt</Text>
+          <Text style={colorStyle}>Tel Prompt</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
