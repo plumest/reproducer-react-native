@@ -30,8 +30,12 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  const callPhone = () => {
+  const callTel = () => {
     Linking.openURL('tel:00000');
+  }
+
+  const callTelPrompt = () => {
+    Linking.openURL('telprompt:00000');
   }
 
   return (
@@ -43,8 +47,11 @@ function App(): React.JSX.Element {
       <ScrollView
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
-        <TouchableOpacity onPress={() => callPhone()}>
-          <Text>Call</Text>
+        <TouchableOpacity onPress={() => callTel()}>
+          <Text>Tel</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => callTelPrompt()}>
+          <Text>Tel Prompt</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
