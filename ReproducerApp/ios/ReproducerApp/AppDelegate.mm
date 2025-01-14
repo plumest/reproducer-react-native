@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import <React/RCTLinkingManager.h>
 
 @implementation AppDelegate
 
@@ -12,16 +13,6 @@
   self.initialProps = @{};
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
-}
-
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
-{
-  {
-    [FIRMessaging messaging].APNSToken = deviceToken;
-    // NSString *fcmToken = [FIRMessaging messaging].FCMToken;
-    // NSLog(@"++APNST deviceToken : %@", deviceToken);
-    // NSLog(@"++FCM device token : %@", fcmToken);
-  }
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
